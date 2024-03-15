@@ -1,12 +1,23 @@
 package Assignment_6;
+import java.util.Scanner;
 
 public class LeapYear {
     public static void main(String[] args) {
-        
+        // not sure if we needed to provide a user input for the year, so I did it anyway and just commented it out below
+
+        /* 
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please Enter a Year: ");
+        int year = keyboard.nextInt();
+        System.out.println(checkLeapYear(year));
+        */
+
         // Test cases
         System.out.println(checkLeapYear(1900));
         System.out.println(checkLeapYear(2000));
         System.out.println(checkLeapYear(2024));
+
+
     }
 
 
