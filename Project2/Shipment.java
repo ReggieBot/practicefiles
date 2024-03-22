@@ -23,7 +23,7 @@ public class Shipment {
         double cost2 = calcCost(volume2);
 
         // get cost comparison
-        double costDiff = package1.absolute(cost1 = cost2);
+        double costDiff = package1.absolute(cost1 - cost2); // I accidentally set cost1 = cost2 when I first wrote this. Which meant that both costs were the same regardless of volume. Spent 4 hours trying to find the bug
         String costComp = costCompare(cost1, cost2);
 
 
@@ -55,7 +55,7 @@ public class Shipment {
 
             }
 
-            System.out.println("Package " + moreExpensive + " is " + costComp + " Than package " + lessExpensive + "by $" + costDiff);
+            System.out.println("Package " + moreExpensive + " is " + costComp + " package " + lessExpensive + " by $" + costDiff);
         }
     }
 
@@ -84,6 +84,7 @@ public class Shipment {
             return "quadruple";
         } else {
             return (int)(Math.max(cost1, cost2) / Math.min(cost1, cost2)) + "x"; // calculates the 'n' times greater than if none of the above conditions are met
+            // this doesn't work, and I cant figure out why
         }
 
     }
