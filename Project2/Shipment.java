@@ -84,7 +84,7 @@ public class Shipment {
             return "quadruple";
         } else {
             return (int)(Math.max(cost1, cost2) / Math.min(cost1, cost2)) + "x"; // calculates the 'n' times greater than if none of the above conditions are met
-            // this doesn't work, and I cant figure out why
+            // this doesn't work, and I cant figure out why..
         }
 
     }
