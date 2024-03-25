@@ -23,7 +23,7 @@ public class Shipment {
         double cost2 = calcCost(volume2);
 
         // get cost comparison
-        double costDiff = package1.absolute(cost1 - cost2); // I accidentally set cost1 = cost2 when I first wrote this. Which meant that both costs were the same regardless of volume. Spent 4 hours trying to find the bug
+        double costDiff = package1.absolute(cost1 - cost2); // I accidentally set cost1 = cost2 when I first wrote this. Which meant that both costs were the same regardless of volume. Spent 4 hours trying to find the bug...
         String costComp = costCompare(cost1, cost2);
 
 
@@ -74,16 +74,16 @@ public class Shipment {
     // cost compare method
     public static String costCompare(double cost1, double cost2) {
         double costRatio = Math.min(cost1, cost2) / Math.max(cost1, cost2); // calculates ratio of smaller cost to larger cost
-        if (costRatio < 0.5) {
+        if (costRatio < 0.75) {
             return "slightly more than";
-        } else if (costRatio < 0.75) {
+        } else if (costRatio < 1.5) {
             return "twice";
-        } else if (costRatio < 0.8) {
+        } else if (costRatio < 2.5) {
             return "triple";
-        } else if (costRatio < 0.9) {
+        } else if (costRatio < 3.5) {
             return "quadruple";
         } else {
-            return (int)(Math.max(cost1, cost2) / Math.min(cost1, cost2)) + "x"; // calculates the 'n' times greater than if none of the above conditions are met
+            return (int) (Math.max(cost1, cost2) / Math.min(cost1, cost2)) + "x"; // calculates the 'n' times greater than if none of the above conditions are met
             // this doesn't work, and I cant figure out why..
         }
 
