@@ -85,6 +85,7 @@ public class Shipment {
         } else {
             return (int) (Math.max(cost1, cost2) / Math.min(cost1, cost2)) + "x"; // calculates the 'n' times greater than if none of the above conditions are met
             // this doesn't work, and I cant figure out why..
+            // I've tried messing around with the ratios and still nothing, must be an issue with my logic
         }
 
     }
