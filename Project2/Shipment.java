@@ -2,6 +2,39 @@ package Project2;
 import java.util.Scanner;
 
 public class Shipment {
+   
+   
+    public static double calcCost(double volume) {
+        double startPrice = 3.0;
+        double cost = startPrice;
+
+        // for loop to increment cost based on volume of package 
+        for (int i = 1; i <= (int)volume; i++) {
+            cost += 1.0;
+        } 
+        return cost;
+    }
+   
+       // cost compare method
+    public static String costCompare(double cost1, double cost2) {
+        double costRatio = Math.min(cost1, cost2) / Math.max(cost1, cost2); // calculates ratio of smaller cost to larger cost
+        if (costRatio > 0.75) {
+            return "slightly more than";
+        } else if (costRatio > 1.5) {
+            return "twice";
+        } else if (costRatio > 2.5) {
+            return "triple";
+        } else if (costRatio > 3.5) {
+            return "quadruple";
+        } else {
+            int timesGreater = (int) Math.round(Math.max(cost1, cost2) / Math.min(cost1, cost2)); // calculates the 'n' times greater than if none of the above conditions are met
+            return timesGreater + "x";
+            // this doesn't work, and I cant figure out why..
+            // I've tried messing around with the ratios and still nothing, must be an issue with my logic
+        }
+
+    }
+   
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -57,37 +90,5 @@ public class Shipment {
 
             System.out.println("Package " + moreExpensive + " is " + costComp + " package " + lessExpensive + " by $" + costDiff);
         }
-    }
-
-
-    public static double calcCost(double volume) {
-        double startPrice = 3.0;
-        double cost = startPrice;
-
-        // for loop to increment cost based on volume of package 
-        for (int i = 1; i <= (int)volume; i++) {
-            cost += 1.0;
-        } 
-        return cost;
-    }
-
-    // cost compare method
-    public static String costCompare(double cost1, double cost2) {
-        double costRatio = Math.min(cost1, cost2) / Math.max(cost1, cost2); // calculates ratio of smaller cost to larger cost
-        if (costRatio > 0.75) {
-            return "slightly more than";
-        } else if (costRatio > 1.5) {
-            return "twice";
-        } else if (costRatio > 2.5) {
-            return "triple";
-        } else if (costRatio > 3.5) {
-            return "quadruple";
-        } else {
-            int timesGreater = (int) Math.round(Math.max(cost1, cost2) / Math.min(cost1, cost2)); // calculates the 'n' times greater than if none of the above conditions are met
-            return timesGreater + "x";
-            // this doesn't work, and I cant figure out why..
-            // I've tried messing around with the ratios and still nothing, must be an issue with my logic
-        }
-
     }
 }
