@@ -74,16 +74,17 @@ public class Shipment {
     // cost compare method
     public static String costCompare(double cost1, double cost2) {
         double costRatio = Math.min(cost1, cost2) / Math.max(cost1, cost2); // calculates ratio of smaller cost to larger cost
-        if (costRatio < 0.75) {
+        if (costRatio > 0.75) {
             return "slightly more than";
-        } else if (costRatio < 1.5) {
+        } else if (costRatio > 1.5) {
             return "twice";
-        } else if (costRatio < 2.5) {
+        } else if (costRatio > 2.5) {
             return "triple";
-        } else if (costRatio < 3.5) {
+        } else if (costRatio > 3.5) {
             return "quadruple";
         } else {
-            return (int) (Math.max(cost1, cost2) / Math.min(cost1, cost2)) + "x"; // calculates the 'n' times greater than if none of the above conditions are met
+            int timesGreater = (int) Math.round(Math.max(cost1, cost2) / Math.min(cost1, cost2)); // calculates the 'n' times greater than if none of the above conditions are met
+            return timesGreater + "x";
             // this doesn't work, and I cant figure out why..
             // I've tried messing around with the ratios and still nothing, must be an issue with my logic
         }
