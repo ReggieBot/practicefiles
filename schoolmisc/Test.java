@@ -1,5 +1,5 @@
 package schoolmisc;
 
-public class test {
+public class Test {
     
 }
