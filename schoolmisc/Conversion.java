@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class conversion {
+public class Conversion {
     public static void main(String[] args){
 
         double fahrenheit;
