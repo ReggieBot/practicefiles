@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class largest_smallest {
+public class LargestSmallest {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
