@@ -1,6 +1,7 @@
 package Ballbreaker;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -46,12 +47,16 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
         // map
         map.draw((Graphics2D)g);
 
-
         // borders
         g.setColor(Color.yellow);
         g.fillRect(0, 0, 3, 592);
         g.fillRect(0, 0, 692, 3);
         g.fillRect(691, 0, 3, 592);
+
+        // score
+        g.setColor(Color.white);
+        g.setFont(new Font("serif", Font.BOLD, 25));
+        g.drawString(""+score, 590, 30);
 
         // paddle
         g.setColor(Color.green);
@@ -60,8 +65,27 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
         // ball
         g.setColor(Color.yellow);
         g.fillOval(ballposX, ballposY, 20, 20);
+
+        checkGameOver(g);
+
         g.dispose();
     }
+
+    private void checkGameOver(Graphics g) {
+        if(ballposY > 570) {
+            play = false;
+            ballXdir = 0;
+            ballYdir = 0;
+            g.setColor(Color.RED);
+            g.setFont(new Font("serif", Font.BOLD, 50));
+            g.drawString("Game Over!", 210, 300);
+
+            g.setFont(new Font("serif", Font.BOLD, 20));
+            g.drawString("Press Enter to Restart", 245, 350);
+        }
+    }
+
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -72,8 +96,8 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
                 ballYdir = -ballYdir;
             }
 
-           A: for (int i = 0; i < map.map.length; i++) {
-                for (int j = 0; j < map.map.length; j++) {
+            A: for (int i = 0; i < map.map.length; i++) {
+                for (int j = 0; j < map.map[0].length; j++) {
                     if (map.map[i][j] > 0) {
                         int brickX = j * map.brickWidth + 80;
                         int brickY = i * map.brickHeight + 50;
@@ -143,6 +167,17 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
                 moveLeft();
             }
         }
+
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            restartGame();
+        }
+    }
+
+    private void restartGame() {
+        // TODO
+        // IMPLEMENT RESTART GAME METHOD
+        // REDRAW MAP METHOD
+        play = true;
     }
 
     public void moveRight() {
