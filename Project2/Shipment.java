@@ -56,7 +56,7 @@ public class Shipment {
         double cost2 = calcCost(volume2);
 
         // get cost comparison
-        double costDiff = package1.absolute(cost1 - cost2); // I accidentally set cost1 = cost2 when I first wrote this. Which meant that both costs were the same regardless of volume. Spent 4 hours trying to find the bug...
+        double costDiff = Package.absolute(cost1 - cost2); // I accidentally set cost1 = cost2 when I first wrote this. Which meant that both costs were the same regardless of volume. Spent 4 hours trying to find the bug...
         String costComp = costCompare(cost1, cost2);
 
 
