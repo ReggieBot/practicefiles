@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class TwoNumbers {
 public static void main(String[] args) {
+    @SuppressWarnings("resource")
     Scanner keyboard = new Scanner(System.in);
 
     System.out.println("Please enter the first number: ");

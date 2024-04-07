@@ -8,6 +8,7 @@ public class Package {
     private double width;
     private double height;
 
+    @SuppressWarnings("unused")
     private Scanner input = new Scanner(System.in);
 
     // constructor (noArgs)

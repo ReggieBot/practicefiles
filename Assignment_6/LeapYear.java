@@ -1,6 +1,7 @@
 package Assignment_6;
 import java.util.Scanner;
 
+@SuppressWarnings("unused")
 public class LeapYear {
     public static void main(String[] args) {
         // not sure if we needed to provide a user input for the year, so I did it anyway and just commented it out below

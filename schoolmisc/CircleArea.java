@@ -2,6 +2,7 @@ import java.lang.Math;
 import java.util.Scanner;
 
 public class CircleArea {
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

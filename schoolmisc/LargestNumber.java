@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class LargestNumber {
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
         Scanner keyboard = new Scanner(System.in);
         double largestNumber;
 

@@ -18,6 +18,7 @@ public class Car {
 
     
     public static void main(String[] args) {
+        @SuppressWarnings("unused")
         Car car1 = new Car(150);
     }
 }

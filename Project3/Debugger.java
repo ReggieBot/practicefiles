@@ -1,6 +1,7 @@
 package Project3;
 
 public class Debugger {
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
         int randomInt = 6;
         String wassup = "hey";

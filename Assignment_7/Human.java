@@ -2,6 +2,7 @@ package Assignment_7;
 
 // human class with a private variable
 public class Human {
+    @SuppressWarnings("unused")
     private int age;
 
     // contructor method
