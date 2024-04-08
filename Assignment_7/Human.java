@@ -5,7 +5,7 @@ public class Human {
     @SuppressWarnings("unused")
     private int age;
 
-    // contructor method
+    // constructor method
     public Human(int age) {
         this.age = age;
     }
