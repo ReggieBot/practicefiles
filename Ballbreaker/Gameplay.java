@@ -86,8 +86,6 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
         }
     }
 
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
         timer.start();
@@ -127,7 +125,6 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
                 }
             }
 
-
             ballposX += ballXdir;
             ballposY += ballYdir;
             if (ballposX < 0) {
@@ -143,14 +140,13 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
 
         repaint();
     }
-
+    // key event
     @Override
     public void keyTyped(KeyEvent e) {}
 
     @Override
     public void keyReleased(KeyEvent e) {}
    
-
     @Override
     public void keyPressed(KeyEvent e) {
        
@@ -161,6 +157,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
                 moveRight();
             }
         }
+
         if(e.getKeyCode() == KeyEvent.VK_LEFT) {
             if(playerX < 10) {
                 playerX = 10;
@@ -190,5 +187,4 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
         play = true;
         playerX -= 20;
     }
-
 }
