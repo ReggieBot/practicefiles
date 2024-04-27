@@ -11,5 +11,6 @@ public class odd {
                 System.out.println(i);
             }
         }
+        scanner.close();
     }    
 }
