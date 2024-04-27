@@ -2,8 +2,7 @@ package Ballbreaker;
 
 import javax.swing.JFrame;
 
-public class Main {
-    
+public class Main {  
     public static void main(String[] args) {
         JFrame obj = new JFrame();
         Gameplay gamePlay = new Gameplay();
@@ -15,9 +14,6 @@ public class Main {
         obj.add(gamePlay);
         obj.setVisible(true);
         obj.addKeyListener(gamePlay);
-
-
-        
 
     }
 }

@@ -164,8 +164,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
             } else { 
                 moveLeft();
             }
-        }
-
+        } 
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             restartGame();
         }
